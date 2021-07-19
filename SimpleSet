@@ -1,0 +1,45 @@
+public class SimpleSet<T> implements Set<T> {
+    private SimpleArray<T> set = new SimpleArray<T>();
+
+    @Override
+    public boolean add(T value) {
+        if(contains(value)) {
+            return false;
+        } else {
+            set.add(value);
+            return true;
+        }
+    }
+
+    @Override
+    public boolean contains(T value) {
+        Iterator<T> setIterator = iterator();
+        while (setIterator.hasNext()) {
+            if (Objects.equals(value, setIterator.next())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return set.iterator();
+    }
+
+    public static void main(String[] args) {
+        SimpleSet<Integer> smpl = new SimpleSet<>();
+        smpl.add(10);
+        smpl.add(30);
+        smpl.add(40);
+        smpl.add(30);
+        smpl.add(50);
+
+        Iterator<Integer> it = smpl.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
+    }
+
+
+}
