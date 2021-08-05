@@ -9,6 +9,7 @@ Supplier, Consumer(BiConsumer), Function(BiFunction), Predicate(BiPredicate), Un
 4) Что такое функции высшего порядка?
 
 5) Какие функциональные интерфейсы из пакета java.util.function поддерживают функции высшего порядка?
+Все
 
 6) Что такое ссылки на методы?
 
